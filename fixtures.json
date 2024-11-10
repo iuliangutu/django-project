@@ -1,0 +1,2 @@
+[{"model": "viewer.genre", "pk": 1, "fields": {"name": "Comedie"}}, {"model": "viewer.genre", "pk": 2, "fields": {"name": "Thriller"}}, {"model": "viewer.genre", "pk": 3, "fields": {"name": "SciFi"}}, {"model": "viewer.movie", "pk": 1, "fields": {"title": "A good movie", "genre": 1, "rating": 10, "released": "2024-10-14", "description": "Descrierea filmului meu bun.", "created": "2024-11-09T09:46:20.097Z"}}]
+
