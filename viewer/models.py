@@ -2,10 +2,15 @@ from django.db.models import (CharField, Model, ForeignKey,
     DO_NOTHING, IntegerField, DateField,
     TextField, DateTimeField, SlugField)
 
+from django.db import models
 from django.utils.text import slugify
 
 
 # Create your models here.
+from django.db.models import CharField, Model, ForeignKey, DO_NOTHING, IntegerField, DateField, TextField, \
+    DateTimeField, SlugField
+
+
 class Genre(Model):
     name = CharField(max_length=128)
 

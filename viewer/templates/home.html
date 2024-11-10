@@ -5,14 +5,34 @@
     <nav>
         {% for genre in genres %}
             <a href="{% url 'genre' genre.name %}"> {{ genre.name }} </a>
+<div class="pt-4">
+    <h3>Genuri</h3>
+    <div class="row mb-4">
+        {% for g in genres %}
+        <div class="col">
+           <a href="{% url 'movie_genre' g.name %}">{{ g.name }}</a>
+        </div>
         {% endfor %}
     </nav>
+    </div>
 
     <h1>Filmele mele preferate</h1>
+    <h3>Alte filtre</h3>
+    <div class="row">
+        <a href="?rating=6" class="col">Rating > 6</a>
+        <a href="?an=2024" class="col">An > 2024</a>
+        <a href="?an=2024&rating=6" class="col">An > 2024 and Rating > 6</a>
+    </div>
 
+    <h1>Lista mea de filme</h1>
     <ul>
         {% for film in filme %}
         <li> <a href="{% url 'film' film.slug %}"> {{ film.title }} </a> </li>
+        {% for movie in movies %}
+        <li>
+            <a href="{% url 'movie_detail' movie.slug %}">{{ movie.title }} - {{ movie.released.year }} </a>
+        </li>
         {% endfor %}
     </ul>
+</div>
 {% endblock %}
