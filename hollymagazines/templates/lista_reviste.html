@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="pt-4">
+<h3>Publicatii</h3>
+    <div class="row mb-4">
+    {% for p in publicatii %}
+    <div class="col">
+       <a href="{% url 'lista_reviste_pub' p.name %}">{{ p.name }}</a>
+    </div>
+    {% endfor %}
+    </div>
+
+    <h1>Lista mea de reviste</h1>
+    <ul>
+        {% for rev in reviste %}
+        <li>
+            <a href="{% url 'detalii_revista' rev.slug %}">{{ rev.title }} -- Data Lansarii: {{ rev.released }} </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

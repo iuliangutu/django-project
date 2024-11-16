@@ -17,27 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from viewer.views import home, film, genres
-from viewer.views import home, movie_detail, movie_genre
+from viewer.views import movie_detail, movie_genre, home
+from hollymagazines.views import lista_reviste, detalii_revista, lista_reviste_pub
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # Parametrii cu regular expressions
     # Regular expressions
     # path('hello/<s>/<other_s>', hello)
 
-    # Parametrii cu URL Encoding
     # Url encoding
     path('', home, name='home'),
-
-    path('film/<slug:my_slug>', film, name='film'),
-
-    path("genre/<str:name>/", genres, name="genre"),
-
     path('movie/<slug:slug>', movie_detail, name='movie_detail'),
-    path('gen/<str:genre_name>', movie_genre, name='movie_genre')
+    path('gen/<str:genre_name>', movie_genre, name='movie_genre'),
+
+    path('reviste/', lista_reviste, name='lista_reviste'),
+    path('detalii_revista/<slug:slug>', detalii_revista, name='detalii_revista'),
+    path('reviste/<str:pub_name>', lista_reviste_pub, name='lista_reviste_pub')
 ]
-
-
-# python manage.py dumpdata viewer --output fixtures.json
